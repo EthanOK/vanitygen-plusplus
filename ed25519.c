@@ -221,7 +221,7 @@ check_thread_index:
                 memcpy(sol_keypair + 32, pub_buf, 32);
                 vg_b58_encode_raw(sol_keypair, 64, sol_priv_b58);
 
-                printf("SOL Privkey: %s\n", sol_priv_b58);
+                printf("SOL Privkey (base58): %s\n", sol_priv_b58);
                 vc_ed25519->vc_halt = 1;
 
                 if (vc_ed25519->vc_result_file) {
@@ -231,7 +231,7 @@ check_thread_index:
                     } else {
                         fprintf(fp, "Pattern: %s\n", vc_ed25519->pattern);
                         fprintf(fp, "SOL Address: %s\n", sol_addr_out);
-                        fprintf(fp, "SOL Privkey: %s\n", sol_priv_b58);
+                        fprintf(fp, "SOL Privkey (base58): %s\n", sol_priv_b58);
                         fclose(fp);
                     }
                 }

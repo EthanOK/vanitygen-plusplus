@@ -942,7 +942,7 @@ ocl_ed25519_main(int argc, char *argv[])
                         memcpy(kp, mr->seed, 32);
                         memcpy(kp + 32, mr->pubkey, 32);
                         vg_b58_encode_raw(kp, 64, kp_b58);
-                        printf("Privkey:    %s\n\n", kp_b58);
+                        printf("Privkey (base58): %s\n\n", kp_b58);
                     } else {
                         printf("Seed (hex): ");
                         for (int j = 0; j < 32; j++) printf("%02x", mr->seed[j]);
@@ -969,7 +969,7 @@ ocl_ed25519_main(int argc, char *argv[])
                             memcpy(kp, mr->seed, 32);
                             memcpy(kp + 32, mr->pubkey, 32);
                             vg_b58_encode_raw(kp, 64, kp_b58);
-                            fprintf(out_fp, "Privkey:    %s\n\n", kp_b58);
+                            fprintf(out_fp, "Privkey (base58): %s\n\n", kp_b58);
                         } else {
                             fprintf(out_fp, "Seed (hex): ");
                             for (int j = 0; j < 32; j++) fprintf(out_fp, "%02x", mr->seed[j]);
